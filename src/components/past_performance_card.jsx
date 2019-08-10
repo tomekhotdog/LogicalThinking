@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 import {get_chart_data, get_chart_options} from '../utils/chart_utils'
 import '../styles/quiz_result.css'
 import RC from 'react-chartjs2';

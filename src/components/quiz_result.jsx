@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import {Card} from 'material-ui/Card';
-import { Table, TableBody, TableHeader, TableRow, TableRowColumn } from 'material-ui/Table';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import moment from 'moment'
 
 import firebase from '../config/firebase.js';
@@ -88,20 +92,20 @@ class QuizResult extends Component {
 
           <div className="main-section">
             <Table className="results-table" selectable={false}>
-              <TableHeader>
-              </TableHeader>
+              <TableHead>
+              </TableHead>
               <TableBody displayRowCheckbox={false}>
                 <TableRow>
-                  <TableRowColumn>Correct answers</TableRowColumn>
-                  <TableRowColumn>{this.state.correct_answers}</TableRowColumn>
+                  <TableCell>Correct answers</TableCell>
+                  <TableCell>{this.state.correct_answers}</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableRowColumn>Incorrect answers</TableRowColumn>
-                  <TableRowColumn>{this.state.incorrect_answers}</TableRowColumn>
+                  <TableCell>Incorrect answers</TableCell>
+                  <TableCell>{this.state.incorrect_answers}</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableRowColumn>Accuracy</TableRowColumn>
-                  <TableRowColumn>{this.state.accuracy}%</TableRowColumn>
+                  <TableCell>Accuracy</TableCell>
+                  <TableCell>{this.state.accuracy}%</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -109,13 +113,15 @@ class QuizResult extends Component {
           </div>
 
           <div className="action-section">
-            <RaisedButton
+            <Button
+              variant="contained"
               style={buttonStyle}
               label="Main Menu"
               primary={true}
               onClick={() => this.props.startMainMenu()}/>
 
-            <RaisedButton
+            <Button
+              variant="contained"
               style={buttonStyle}
               label="Try Again"
               primary={true}
@@ -133,19 +139,5 @@ class QuizResult extends Component {
     )
   }
 }
-
-// Alternative button design:
-// <CardActions>
-//   <RaisedButton
-//     primary={true}
-//     label="Main Menu"
-//     onClick={() => this.props.startMainMenu()}/>
-//
-//   <RaisedButton
-//     primary={true}
-//     label="Try Again"
-//     onClick={() => this.props.setQuizPhase("intro")} />
-//
-// </CardActions>
 
 export default QuizResult;

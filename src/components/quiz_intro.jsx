@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import {Card} from 'material-ui/Card';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
 
 import '../styles/quiz_mode.css'
 
@@ -26,7 +26,8 @@ class QuizIntro extends Component {
           </div>
 
           <div className="main-section">
-            <RaisedButton
+            <Button
+              variant="contained"
               label="Start"
               primary={true}
               style={style}

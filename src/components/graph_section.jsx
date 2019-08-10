@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 
-import ExchangeRatesQuizContainer from './exchange_rates_quiz_container';
-import ExchangeRatesSelection from './exchange_rates_selection';
+import GraphSelection from './graph_selection';
 import {get_quiz_name, get_quiz_seconds} from '../utils/question_info.js'
 
-class ExchangeRatesSection extends Component {
+const SECTION_TITLE = 'Graph Interpretation Practice';
+
+class GraphSection extends Component {
+
   constructor(props) {
     super(props);
 
@@ -29,24 +31,18 @@ class ExchangeRatesSection extends Component {
     if (this.state.quiz_mode) {
       return (
         <div>
-          <AppBar title="Exchange Rates Practice" />
-          <ExchangeRatesQuizContainer
-            quizId={this.state.quiz_id}
-            quizName={get_quiz_name(this.state.quiz_id)}
-            quizSeconds={get_quiz_seconds(this.state.quiz_id)}
-            startQuizSelection={this.startQuizSelection}
-            user={this.props.user} />
+          <AppBar title={SECTION_TITLE} />
         </div>
       );
     } else{
       return (
         <div>
-          <AppBar title="Exchange Rates Practice" />
-          <ExchangeRatesSelection startQuiz={this.startQuiz}/>
+          <AppBar title={SECTION_TITLE} />
+          <GraphSelection startQuiz={this.startQuiz}/>
         </div>
       );
     }
   }
 }
 
-export default ExchangeRatesSection;
+export default GraphSection;

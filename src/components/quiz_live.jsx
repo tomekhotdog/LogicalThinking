@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import {Card} from 'material-ui/Card';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
 import moment from 'moment'
 
 import '../styles/quiz_mode.css'
@@ -141,7 +141,7 @@ class QuizLive extends Component {
             onChange={this.setInputState}
              />
         </div>
-        <RaisedButton label="Finish Quiz" onClick={this.finishQuiz}/>
+        <Button variant="contained" label="Finish Quiz" onClick={this.finishQuiz}/>
         </Card>
       </div>
     )

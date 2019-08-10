@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import {Card} from 'material-ui/Card';
-import { Table, TableBody, TableHeader, TableRow, TableRowColumn } from 'material-ui/Table';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import moment from 'moment'
 
 import '../styles/quiz_mode.css'
@@ -136,14 +141,14 @@ class ExchangeRatesQuizLive extends Component {
           <div className="right-section border">
             <u>Exchange Rates</u>
             <Table className="exchange-rates-table" selectable={false}>
-              <TableHeader>
-              </TableHeader>
+              <TableHead>
+              </TableHead>
               <TableBody displayRowCheckbox={false}>
                 <TableRow>
-                  <TableRowColumn>1 GBP = 1.1762 EUR</TableRowColumn>
+                  <TableCell>1 GBP = 1.1762 EUR</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableRowColumn>1 USD = 1.5289 GBP</TableRowColumn>
+                  <TableCell>1 USD = 1.5289 GBP</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -157,7 +162,7 @@ class ExchangeRatesQuizLive extends Component {
             onChange={this.setInputState}
              />
         </div>
-        <RaisedButton label="Finish Quiz" onClick={this.finishQuiz}/>
+        <Button variant="contained" label="Finish Quiz" onClick={this.finishQuiz}/>
         </Card>
       </div>
     )

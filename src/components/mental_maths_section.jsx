@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppBar from 'material-ui/AppBar';
+import AppBar from '@material-ui/core/AppBar';
 
 import QuizContainer from './quiz_container'
 import QuizModeContainer from './quiz_mode_container'
