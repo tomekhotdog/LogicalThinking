@@ -78,17 +78,17 @@ class HomePage extends Component {
       case MENTAL_MATHS:
         return (
           <div>
-            <MentalMathsSection user={this.state.user}/>
+            <MentalMathsSection user={this.state.user} showHomePage={() => this.showHomePage()}/>
           </div>);
       case EXCHANGE_RATES:
         return(
           <div>
-            <ExchangeRatesSection user={this.state.user}/>
+            <ExchangeRatesSection user={this.state.user} showHomePage={() => this.showHomePage()}/>
           </div>);
       case GRAPH_SECTION:
         return (
           <div>
-            <GraphSection user={this.state.user}/>
+            <GraphSection user={this.state.user} showHomePage={() => this.showHomePage()}/>
           </div>
           );
       default:
@@ -96,10 +96,8 @@ class HomePage extends Component {
           <div>
             <AppBar
               position="static"
-              title="Logical Thinking"
               iconElementRight={this.state.user ?
                 ProfilePic(this.state.user.photoURL): null}>
-
               <Toolbar>
                 <IconButton edge="start" color="inherit" aria-label="menu">
                   <MenuIcon />
@@ -113,7 +111,11 @@ class HomePage extends Component {
             </AppBar>
 
             <div className="header-section">
-              <h5>Info about the sections available.</h5>
+              <h5>Numerical reasoning tests are a staple of the job 
+              application process. Employers use the results as a lazy proxy 
+              for intelligence. To beat the competition, you must train 
+                these skills to perfection. <br/><br/> 
+              Practice incessantly until the questions require zero effort. Only then you are ready.</h5>
             </div>
 
             <div className="selection-section">

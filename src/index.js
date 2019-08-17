@@ -5,27 +5,13 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import pink from '@material-ui/core/colors/pink';
-import blue from '@material-ui/core/colors/blue';
-
-const PRIMARY = pink[700]
-const SECONDARY = pink[400]
-
-const muiTheme = createMuiTheme({
-  palette: {
-    primary: pink,
-    secondary: blue,
-  },
-  appBar: {
-    height: 50,
-  },
-});
+import { ThemeProvider } from '@material-ui/styles';
+import theme from './styles/theme.js'
 
 const ThemedApp = () => (
-  <MuiThemeProvider muiTheme={muiTheme}>
+  <ThemeProvider theme={theme}>
     <App />
-  </MuiThemeProvider>
+  </ThemeProvider>
 );
 
 ReactDOM.render(<ThemedApp />, document.getElementById('root'));
