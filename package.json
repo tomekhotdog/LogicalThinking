@@ -11,7 +11,7 @@
     "@material-ui/styles": "^4.0.0",
     "chart.js": "^2.8.0",
     "firebase": "^4.7.0",
-    "moment": "^2.14.1",
+    "moment": "^2.29.2",
     "react": "^16.9.0",
     "react-chartjs": "^0.8.0",
     "react-chartjs2": "^1.2.0",
